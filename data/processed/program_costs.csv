@@ -1,0 +1,9 @@
+program_id,total_cost_or_debt,program_length_years,completion_rate
+cs,20350.575654021766,4,
+cs_expected,10175.287827010883,2,0.64
+finance,21726.37954102227,4,
+finance_expected,10863.189770511135,2,0.64
+psychology,22936.403136556262,4,
+psychology_expected,11468.201568278131,2,0.64
+electrician,0.0,4,0.4882
+electrician_expected,0.0,4,0.4882

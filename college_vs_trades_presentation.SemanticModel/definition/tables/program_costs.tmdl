@@ -1,0 +1,52 @@
+table program_costs
+	lineageTag: 741e020f-50c4-4b6c-b18b-3ca3b1e83956
+
+	column program_id
+		dataType: string
+		lineageTag: e91b50ab-8ca2-4a6e-b833-eb06f709ecd3
+		summarizeBy: none
+		sourceColumn: program_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_cost_or_debt
+		dataType: double
+		lineageTag: 43f026a2-aaf0-4e67-970e-015cec98a6df
+		summarizeBy: sum
+		sourceColumn: total_cost_or_debt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column program_length_years
+		dataType: int64
+		formatString: 0
+		lineageTag: b5d16df2-1fe3-4058-8d6f-8ab4ebd6ea44
+		summarizeBy: sum
+		sourceColumn: program_length_years
+
+		annotation SummarizationSetBy = Automatic
+
+	column completion_rate
+		dataType: double
+		lineageTag: 60ac5d50-f631-493e-8ed6-5c8d36345f88
+		summarizeBy: sum
+		sourceColumn: completion_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition program_costs = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\program_costs.csv"), [Delimiter = ",", Columns = 4, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"program_id", type text}, {"total_cost_or_debt", type number}, {"program_length_years", Int64.Type}, {"completion_rate", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

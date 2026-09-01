@@ -1,0 +1,218 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "c9d2a6f1e8b437905d4c",
+  "position": {
+    "x": 46.576819407008081,
+    "y": 156.54986522911051,
+    "z": 1000,
+    "height": 826.73854447439351,
+    "width": 1826.8463611859838,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Early in this project, a roofer about my age, after learning I used to teach high school math, told me, half-joking, \"you probably know a lot of things I can't do.\" I told him the opposite was just as true. My father-in-law has spent his career as an electrician. He genuinely enjoys the work, is the fix-anything person our family counts on, and earns a comfortable wage doing it. He's living proof of the flat satisfaction number in this data: fifty years without a real change, and zero debt, while the \"safer\" four-year path only wins on paper after an 11-year wait, and only for some fields.",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "If you're optimizing for:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Zero debt and stability today ➡️ ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  },
+                  {
+                    "value": "Electrician:",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "24pt",
+                      "color": "#cc79a7"
+                    }
+                  },
+                  {
+                    "value": " 50 years of flat satisfaction, zero debt, income now.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Maximum lifetime earnings, if you can wait ➡️ ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  },
+                  {
+                    "value": "Computer Science:",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "24pt",
+                      "color": "#eb6834"
+                    }
+                  },
+                  {
+                    "value": " overtakes the trade at year 11, if you finish and stay.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "One path worth a second look ➡️ ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  },
+                  {
+                    "value": "Finance:",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "24pt",
+                      "color": "#0072b2"
+                    }
+                  },
+                  {
+                    "value": " slowest payoff (year 23), and the only field with a confirmed satisfaction decline.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A choice for reasons other than pay ➡️ ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  },
+                  {
+                    "value": "Psychology:",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "24pt",
+                      "color": "#009e73"
+                    }
+                  },
+                  {
+                    "value": " never overtakes the trade financially here, but pay was never the whole reason to choose it.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

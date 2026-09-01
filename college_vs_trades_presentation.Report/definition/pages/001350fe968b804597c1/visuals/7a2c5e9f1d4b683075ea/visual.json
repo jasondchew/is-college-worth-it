@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "7a2c5e9f1d4b683075ea",
+  "position": {
+    "x": 46.576819407008081,
+    "y": 984.58221024258751,
+    "z": 5000,
+    "height": 57.658898875195092,
+    "width": 1683.2678542597278,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Psychology's crossover-year cell is blank by design, not missing data: under this model's flat-earnings assumption, Psychology never overtakes the electrician path.",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "16pt",
+                      "color": "#6b6b6b"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["programs","earnings_by_year","program_costs","satisfaction_by_decade","Scorecard","satisfaction_bands_wide","satisfaction_whiskers"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table programs
+ref table earnings_by_year
+ref table program_costs
+ref table satisfaction_by_decade
+ref table Scorecard
+ref table satisfaction_bands_wide
+ref table satisfaction_whiskers
+
+ref cultureInfo en-US
+

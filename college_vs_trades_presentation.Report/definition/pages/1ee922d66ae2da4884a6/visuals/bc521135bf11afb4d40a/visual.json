@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "bc521135bf11afb4d40a",
+  "position": {
+    "x": 1345.5525606469002,
+    "y": 732.29110512129375,
+    "z": 4000,
+    "height": 266.52291105121293,
+    "width": 445.06738544474393,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Each bar pair compares a field's own 1970 estimate to its 2020 estimate. A gap between the bars means the change is statistically real; touching or overlapping bars means it isn't.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

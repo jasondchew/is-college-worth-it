@@ -1,0 +1,51 @@
+table Scorecard
+	lineageTag: 76eab298-1f8c-4483-ab54-45a402670063
+
+	column Field
+		dataType: string
+		lineageTag: 07b7bb3e-8d42-4084-9b2b-ba43cce5c9ac
+		summarizeBy: none
+		sourceColumn: Field
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Winner'
+		dataType: string
+		lineageTag: 98496a2f-25d2-43cd-a7bf-32ff04e3e0d2
+		summarizeBy: none
+		sourceColumn: Financial Winner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Satisfaction (Pooled)'
+		dataType: string
+		lineageTag: ca937aee-5329-469d-8f76-2fb3629a54d9
+		summarizeBy: none
+		sourceColumn: Satisfaction (Pooled)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debt at Completion'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8697d9aa-ccf3-4707-8a7a-6cc74ce4e6a7
+		summarizeBy: sum
+		sourceColumn: Debt at Completion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition Scorecard = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcs7PLSgtSS1SCE7OTM1LTlXSUVJ4NGcykDKx0LNQBdIqRgY6xqaGSrE60UpumXmJEEVAZGqqZwxRYKhjbmQGVhBQXJmckZ+Tn14JUaOroJFakZxTmpKaoqNQnJqqkJdfkqoJ1mSkY2kM0eSak5pcUpSZnJmYBzXZAGq1gVJsLAA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Field = _t, #"Financial Winner" = _t, #"Satisfaction (Pooled)" = _t, #"Debt at Completion" = _t]),
+				  #"Changed column type" = Table.TransformColumnTypes(Source, {{"Field", type text}, {"Financial Winner", type text}, {"Satisfaction (Pooled)", type text}, {"Debt at Completion", Currency.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3c4a7c08cd05e3d5af04",
+  "position": {
+    "x": 1584.6897368279429,
+    "y": 451.97136860233582,
+    "z": 2000,
+    "height": 124.01215805471125,
+    "width": 299.08814589665656,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "programs"
+                    }
+                  },
+                  "Property": "CS Crossover Year"
+                }
+              },
+              "queryRef": "programs.CS Crossover Year",
+              "nativeQueryRef": "CS overtakes Electrician in year:",
+              "displayName": "CS overtakes Electrician in year:"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "programs"
+                  }
+                },
+                "Property": "CS Crossover Year"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

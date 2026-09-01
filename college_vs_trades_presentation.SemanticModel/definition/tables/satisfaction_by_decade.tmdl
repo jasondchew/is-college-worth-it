@@ -1,0 +1,80 @@
+table satisfaction_by_decade
+	lineageTag: 22e2711d-5c53-471d-9704-6fd5f12f05c1
+
+	column occupation_group
+		dataType: string
+		lineageTag: dff4c14c-3080-472c-8dec-8e2251d3a0bb
+		summarizeBy: none
+		sourceColumn: occupation_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade
+		dataType: string
+		lineageTag: cc8c1777-bcbc-4017-804b-f70e8377ca23
+		summarizeBy: none
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade_is_partial
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d29eee79-dbf1-4bac-a70e-839a7dbe3709
+		summarizeBy: none
+		sourceColumn: decade_is_partial
+
+		annotation SummarizationSetBy = Automatic
+
+	column n
+		dataType: int64
+		formatString: 0
+		lineageTag: e9282668-0e87-4942-8841-d032ac95623e
+		summarizeBy: sum
+		sourceColumn: n
+
+		annotation SummarizationSetBy = Automatic
+
+	column very_satisfied_pct
+		dataType: double
+		formatString: 0"%"
+		lineageTag: 7ea34e0f-532e-4e21-b1fd-47e7c2bd124d
+		summarizeBy: sum
+		sourceColumn: very_satisfied_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column ci_low_95
+		dataType: double
+		lineageTag: 6a065e4a-69e4-477a-b1a3-c32462446b56
+		summarizeBy: sum
+		sourceColumn: ci_low_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ci_high_95
+		dataType: double
+		lineageTag: b81716a6-fc9d-4015-a415-212acc1b55bf
+		summarizeBy: sum
+		sourceColumn: ci_high_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition satisfaction_by_decade = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\satisfaction_by_decade.csv"), [Delimiter = ",", Columns = 7, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"occupation_group", type text}, {"decade", type text}, {"decade_is_partial", type logical}, {"n", Int64.Type}, {"very_satisfied_pct", type number}, {"ci_low_95", type number}, {"ci_high_95", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

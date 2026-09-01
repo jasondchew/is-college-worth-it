@@ -1,0 +1,11 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Internal drafts, not for the public repo
+linkedin_post_draft.md
+
+# Large raw source files — original sources are linked in METHODOLOGY.md, not needed in the repo
+data/raw/GSS_stata/
+data/raw/gss_stata.zip
+data/raw/Most-Recent-Cohorts-Field-of-Study.csv
+data/raw/college_scorecard_field_of_study.zip

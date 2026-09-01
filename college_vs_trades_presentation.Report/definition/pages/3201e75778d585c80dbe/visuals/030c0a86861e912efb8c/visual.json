@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "030c0a86861e912efb8c",
+  "position": {
+    "x": 25.876010781671159,
+    "y": 906.95417789757414,
+    "z": 7000,
+    "height": 102.21024258760107,
+    "width": 1866.954177897574,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Money and satisfaction don't agree on which path is worth it, and neither did that roofer's assumption about which of us knew more.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

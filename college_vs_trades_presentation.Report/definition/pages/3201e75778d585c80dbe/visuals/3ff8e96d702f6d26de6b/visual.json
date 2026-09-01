@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3ff8e96d702f6d26de6b",
+  "position": {
+    "x": 25.876010781671159,
+    "y": 698.65229110512132,
+    "z": 4000,
+    "height": 240.64690026954176,
+    "width": 1866.954177897574,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "I've spent five years teaching high school math, watching capable students leave for the trades. This summer, working weekends on my father-in-law's five-acre renovation, I saw why: framing, roofing, running a Bobcat, pouring a concrete sidewalk. It was more problem-solving than I expected walking in. Then I met Fernando, the roofing crew's lead, about my age. When he learned I used to teach math, he laughed, \"you probably know a lot of things I can't do.\" I told him the truth: \"yeah, but you know a lot of things I don't.\" He didn't seem to believe me. I wanted to explore my father-in-law's trade: electrician. The same trade my students keep choosing over college.",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

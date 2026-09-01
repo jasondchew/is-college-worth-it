@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "college_vs_trades_presentation"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f4629ff8-f90d-42c2-9f8e-9c1f77ab3a5c"
+  }
+}

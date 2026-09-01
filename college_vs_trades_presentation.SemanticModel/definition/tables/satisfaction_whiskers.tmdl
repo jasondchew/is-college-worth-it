@@ -1,0 +1,90 @@
+table satisfaction_whiskers
+	lineageTag: b2eaad37-a6f9-4b81-8a8e-06b8e1eba0bb
+
+	column occupation_group
+		dataType: string
+		lineageTag: 29469f0a-6738-4721-86fd-7765ee235bfb
+		summarizeBy: none
+		sourceColumn: occupation_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade
+		dataType: string
+		lineageTag: 03630f15-0fe6-4b4f-b1c7-294de4b56fbd
+		summarizeBy: none
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column ci_low_95
+		dataType: double
+		lineageTag: b4a6e77f-ad94-4294-9a94-3ae93c1c6c8e
+		summarizeBy: sum
+		sourceColumn: ci_low_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ci_high_95
+		dataType: double
+		lineageTag: fcb45b40-3337-43ad-816f-3428f537fcda
+		summarizeBy: sum
+		sourceColumn: ci_high_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column band_width
+		dataType: double
+		lineageTag: aa96bb63-cbb6-421c-aba7-c5f01850c09e
+		summarizeBy: sum
+		sourceColumn: band_width
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ci_low_masked
+		dataType: double
+		lineageTag: 7c9e5e2a-3f1b-4c6d-9e2a-1b7c9e5e2a3f
+		summarizeBy: sum
+		sourceColumn: ci_low_masked
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column band_width_masked
+		dataType: double
+		lineageTag: 4d8f6a1c-2e9b-4a7d-8f6a-1c2e9b4a7d8f
+		summarizeBy: sum
+		sourceColumn: band_width_masked
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition satisfaction_whiskers = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\satisfaction_by_decade.csv"), [Delimiter = ",", Columns = 7, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"occupation_group", type text}, {"decade", type text}, {"decade_is_partial", type logical}, {"n", Int64.Type}, {"very_satisfied_pct", type number}, {"ci_low_95", type number}, {"ci_high_95", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed column type", each [decade] <> "ALL" and ([occupation_group] = "CS-related" or [occupation_group] = "Finance-related")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"decade_is_partial", "n", "very_satisfied_pct"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Columns", "band_width", each [ci_high_95] - [ci_low_95]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom1",{{"band_width", type number}}),
+				    #"Added Custom2" = Table.AddColumn(#"Changed Type1", "ci_low_masked", each if [decade] = "1970" or [decade] = "2020" then [ci_low_95] else 0),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "band_width_masked", each if [decade] = "1970" or [decade] = "2020" then [band_width] else 0),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom3",{{"ci_low_masked", type number}, {"band_width_masked", type number}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,61 @@
+table earnings_by_year
+	lineageTag: 3b7fee72-f4f0-41cb-a4d5-fc4b92bf7bc1
+
+	column program_id
+		dataType: string
+		lineageTag: fb79dd4f-82c2-4fd6-8559-673720866210
+		summarizeBy: none
+		sourceColumn: program_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_since_start
+		dataType: int64
+		formatString: 0
+		lineageTag: b0263f98-5a8b-41c3-9c28-a06ce26d92cd
+		summarizeBy: sum
+		sourceColumn: years_since_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column annual_earnings
+		dataType: double
+		lineageTag: 556aef35-0be9-4b91-96ee-7e3895e6a533
+		summarizeBy: sum
+		sourceColumn: annual_earnings
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_earnings
+		dataType: double
+		lineageTag: 3dc66e81-afb8-4ac1-9a2a-7e2b38f105ee
+		summarizeBy: sum
+		sourceColumn: cumulative_earnings
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_earnings_net_of_debt
+		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: cbef716e-0cb5-405e-aacb-d02c373e6b9b
+		summarizeBy: sum
+		sourceColumn: cumulative_earnings_net_of_debt
+
+		annotation SummarizationSetBy = Automatic
+
+	partition earnings_by_year = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\earnings_by_year.csv"), [Delimiter = ",", Columns = 5, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"program_id", type text}, {"years_since_start", Int64.Type}, {"annual_earnings", type number}, {"cumulative_earnings", type number}, {"cumulative_earnings_net_of_debt", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

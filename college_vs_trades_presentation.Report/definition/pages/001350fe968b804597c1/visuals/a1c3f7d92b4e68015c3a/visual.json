@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a1c3f7d92b4e68015c3a",
+  "position": {
+    "x": 46.499111996125073,
+    "y": 27.899467197675044,
+    "z": 3000,
+    "height": 135.77740702868522,
+    "width": 1703.7274635380227,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Computer Science Pays Best Long-Term, But Electrician Satisfaction Has Held Flat for 50 Years, at Zero Debt",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "32pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

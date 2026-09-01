@@ -1,0 +1,9 @@
+program_id,path_type,scenario,name,source
+cs,bachelor_degree,completes_only,Computer Science,"College Scorecard (Most Recent Cohorts, Field of Study), completions-weighted national average"
+cs_expected,bachelor_degree_expected_value,completion_rate_weighted,Computer Science (completion-rate-weighted),"College Scorecard completer curve blended with NCES 6-year completion rate + BLS 'some college, no degree' earnings"
+finance,bachelor_degree,completes_only,Finance and Financial Management Services,"College Scorecard (Most Recent Cohorts, Field of Study), completions-weighted national average"
+finance_expected,bachelor_degree_expected_value,completion_rate_weighted,Finance and Financial Management Services (completion-rate-weighted),"College Scorecard completer curve blended with NCES 6-year completion rate + BLS 'some college, no degree' earnings"
+psychology,bachelor_degree,completes_only,"Psychology, General","College Scorecard (Most Recent Cohorts, Field of Study), completions-weighted national average"
+psychology_expected,bachelor_degree_expected_value,completion_rate_weighted,"Psychology, General (completion-rate-weighted)","College Scorecard completer curve blended with NCES 6-year completion rate + BLS 'some college, no degree' earnings"
+electrician,trade_apprenticeship,completes_only,Electrician Apprenticeship,BLS OEWS May 2025 national estimates + DOL Registered Apprenticeship (program length)
+electrician_expected,trade_apprenticeship,completion_rate_weighted,Electrician Apprenticeship,BLS OEWS May 2025 national estimates + DOL Registered Apprenticeship (program length)

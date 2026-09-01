@@ -1,0 +1,185 @@
+table programs
+	lineageTag: 00822167-740c-45ad-af77-b0540cc9e580
+
+	measure 'CS Crossover Year' =
+			
+			VAR CSValues =
+			    SUMMARIZE(
+			        FILTER(earnings_by_year, RELATED(programs[display_name]) = "Computer Science"),
+			        earnings_by_year[years_since_start],
+			        "CS_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR ElecValues =
+			    SUMMARIZE(
+			        FILTER(earnings_by_year, RELATED(programs[display_name]) = "Electrician"),
+			        earnings_by_year[years_since_start],
+			        "Elec_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR Combined = NATURALINNERJOIN(CSValues, ElecValues)
+			VAR CrossoverTable = FILTER(Combined, [CS_Cum] >= [Elec_Cum])
+			RETURN MINX(CrossoverTable, earnings_by_year[years_since_start])
+		formatString: 0
+		lineageTag: f6c925e8-abb4-409b-b499-09f8548f8577
+
+	measure 'Finance Crossover Year' =
+			
+			VAR FinValues =
+			    SUMMARIZE(
+			        FILTER(earnings_by_year, RELATED(programs[display_name]) = "Finance"),
+			        earnings_by_year[years_since_start],
+			        "Fin_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR ElecValues =
+			    SUMMARIZE(
+			        FILTER(earnings_by_year, RELATED(programs[display_name]) = "Electrician"),
+			        earnings_by_year[years_since_start],
+			        "Elec_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR Combined = NATURALINNERJOIN(FinValues, ElecValues)
+			VAR CrossoverTable = FILTER(Combined, [Fin_Cum] >= [Elec_Cum])
+			RETURN MINX(CrossoverTable, earnings_by_year[years_since_start])
+		formatString: 0
+		lineageTag: a3002da1-3bd1-4b37-b05e-81032e6de5b6
+
+	measure 'Median Debt' = SUM(program_costs[total_cost_or_debt])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ef518c36-813d-4ae8-9bfa-5222f9d6bd86
+
+	measure 'Crossover Year vs Electrician' =
+			
+			VAR CurrentPath = SELECTEDVALUE(programs[display_name])
+			VAR CurrentScenario = SELECTEDVALUE(programs[scenario])
+			VAR PathValues =
+			    SUMMARIZE(
+			        FILTER(
+			            ALL(earnings_by_year),
+			            RELATED(programs[display_name]) = CurrentPath &&
+			            RELATED(programs[scenario]) = CurrentScenario
+			        ),
+			        earnings_by_year[years_since_start],
+			        "Path_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR ElecValues =
+			    SUMMARIZE(
+			        FILTER(
+			            ALL(earnings_by_year),
+			            RELATED(programs[display_name]) = "Electrician" &&
+			            RELATED(programs[scenario]) = CurrentScenario
+			        ),
+			        earnings_by_year[years_since_start],
+			        "Elec_Cum", SUM(earnings_by_year[cumulative_earnings_net_of_debt])
+			    )
+			VAR Combined = NATURALINNERJOIN(PathValues, ElecValues)
+			VAR CrossoverTable = FILTER(Combined, [Path_Cum] >= [Elec_Cum])
+			RETURN
+			    IF(CurrentPath = "Electrician", BLANK(), MINX(CrossoverTable, earnings_by_year[years_since_start]))
+		formatString: 0
+		lineageTag: a36c9c7e-faab-437f-8a61-cd9ba4ef6581
+
+	measure '2020 Satisfaction %' =
+			
+			VAR CurrentPath = SELECTEDVALUE(programs[display_name])
+			VAR OccGroup =
+			    SWITCH(
+			        CurrentPath,
+			        "Computer Science", "CS-related",
+			        "Finance", "Finance-related",
+			        "Electrician", "Electrician",
+			        BLANK()
+			    )
+			RETURN
+			    IF(
+			        ISBLANK(OccGroup),
+			        BLANK(),
+			        CALCULATE(
+			            SUM(satisfaction_by_decade[very_satisfied_pct]),
+			            satisfaction_by_decade[occupation_group] = OccGroup,
+			            satisfaction_by_decade[decade] = "2020"
+			        )
+			    )
+		formatString: 0"%"
+		lineageTag: 05bf141c-4fa8-473e-ba69-bdd888e30077
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column program_id
+		dataType: string
+		lineageTag: dc36213c-1941-4a3c-98df-1d3dbf1d02e5
+		summarizeBy: none
+		sourceColumn: program_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column path_type
+		dataType: string
+		lineageTag: d8f20af5-a638-42df-a9e6-48a59ea82cea
+		summarizeBy: none
+		sourceColumn: path_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario
+		dataType: string
+		lineageTag: af55cdd5-89e4-4974-bfd3-0ae99ebf89e8
+		summarizeBy: none
+		sourceColumn: scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 63900a5e-58f7-4978-bdb1-af7d07a546bc
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: 4babb1bd-abc7-4086-83c2-db04b066c96b
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column display_name =
+			
+			SWITCH(
+			    programs[program_id],
+			    "cs", "Computer Science", "cs_expected", "Computer Science",
+			    "finance", "Finance", "finance_expected", "Finance",
+			    "psychology", "Psychology", "psychology_expected", "Psychology",
+			    "electrician", "Electrician", "electrician_expected", "Electrician"
+			)
+		lineageTag: 651d7ac2-3839-49b6-9c27-b7317bd72c95
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column scenario_label = ```
+			
+			SWITCH(
+			    programs[scenario], 
+			    "completes_only", "Assumes Everyone Finishes",
+			    "completion_rate_weighted", "Accounts for Dropout Risk"
+			)
+			```
+		lineageTag: 6971273b-2737-4f8e-80e9-b51c341160ae
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition programs = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\programs.csv"), [Delimiter = ",", Columns = 5, QuoteStyle = QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"program_id", type text}, {"path_type", type text}, {"scenario", type text}, {"name", type text}, {"source", type text}})
+				in
+				  #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

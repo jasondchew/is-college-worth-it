@@ -1,0 +1,15 @@
+{
+  "name": "Custom",
+  "textClasses": {
+    "label": {
+      "fontSize": 14
+    },
+    "title": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "fontSize": 20
+    },
+    "callout": {
+      "fontSize": 28
+    }
+  }
+}

@@ -1,0 +1,25 @@
+relationship AutoDetected_c22c8a56-220c-4f23-9118-925e1fe36aff
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: programs.program_id
+	toColumn: program_costs.program_id
+
+relationship f5a99437-750e-4194-62d4-5bd16c15ebb3
+	fromColumn: earnings_by_year.program_id
+	toColumn: programs.program_id
+
+relationship AutoDetected_9cac9f94-6c70-4a75-b0e2-03b5beefee30
+	fromColumn: satisfaction_by_decade.decade
+	toColumn: satisfaction_bands_wide.decade
+
+relationship AutoDetected_5fac4254-c311-4082-9c89-bf32aafa7bd1
+	fromColumn: satisfaction_whiskers.decade
+	toColumn: satisfaction_bands_wide.decade
+
+relationship AutoDetected_3dacaed8-dfca-49ac-aa3d-51ebdd1e8225
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: satisfaction_whiskers.ci_low_95
+	toColumn: satisfaction_by_decade.ci_low_95
+

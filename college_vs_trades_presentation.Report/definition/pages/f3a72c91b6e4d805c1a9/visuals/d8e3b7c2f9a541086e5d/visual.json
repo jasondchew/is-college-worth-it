@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d8e3b7c2f9a541086e5d",
+  "position": {
+    "x": 45.283018867924525,
+    "y": 523.98921832884093,
+    "z": 2000,
+    "height": 250,
+    "width": 1750,
+    "tabOrder": 2001
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Deliberately out of scope (not gaps we missed):",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "22pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A second trade beyond electrician (plumbing or HVAC), to test whether these findings hold up past one trade.",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Occupational physical toll (injury/disability rates), a real, commonly-raised argument against the trades that this data doesn't capture. Satisfaction and physical toll are different constructs, and GSS's satisfaction figures may even understate toll: workers forced out by injury exit the surveyed population entirely.",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

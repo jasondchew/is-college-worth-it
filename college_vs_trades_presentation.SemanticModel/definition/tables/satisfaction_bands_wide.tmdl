@@ -1,0 +1,116 @@
+table satisfaction_bands_wide
+	lineageTag: 6439a39f-0670-4a2d-8716-c9f507e70abe
+
+	column decade
+		dataType: string
+		lineageTag: 7959f5cc-f26d-4769-b811-f2de0edae972
+		summarizeBy: none
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS_pct
+		dataType: double
+		lineageTag: 120a1ae0-57e6-4b39-a354-3d962a1a378f
+		summarizeBy: sum
+		sourceColumn: CS_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_low
+		dataType: double
+		lineageTag: 4ec2fab0-164a-4504-bf5b-6cbdaf5d02de
+		summarizeBy: sum
+		sourceColumn: CS_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_high
+		dataType: double
+		lineageTag: eaaedd3a-6697-4d1e-89d4-57c16a7d0f7a
+		summarizeBy: sum
+		sourceColumn: CS_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Finance_pct
+		dataType: double
+		lineageTag: 18baca15-8d49-49a4-a57e-a1bfedc5fa42
+		summarizeBy: sum
+		sourceColumn: Finance_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Finance_low
+		dataType: double
+		lineageTag: dd0eb095-5e19-4757-95a2-55cf990e29d6
+		summarizeBy: sum
+		sourceColumn: Finance_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Finance_high
+		dataType: double
+		lineageTag: 0e8c92a1-7173-4b1e-8f71-74df1f963964
+		summarizeBy: sum
+		sourceColumn: Finance_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CS_band_width
+		dataType: double
+		lineageTag: 6c241eee-001b-46e3-b3a7-0b582fd03971
+		summarizeBy: sum
+		sourceColumn: CS_band_width
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Finance_band_width
+		dataType: double
+		lineageTag: a550e5c4-00c2-45e2-bc05-692674447cf3
+		summarizeBy: sum
+		sourceColumn: Finance_band_width
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition satisfaction_bands_wide = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Jason Chew\OneDrive\Desktop\Projects\College vs Trades\data\processed\satisfaction_by_decade.csv"), [Delimiter = ",", Columns = 7, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"occupation_group", type text}, {"decade", type text}, {"decade_is_partial", type logical}, {"n", Int64.Type}, {"very_satisfied_pct", type number}, {"ci_low_95", type number}, {"ci_high_95", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed column type", each ([decade] <> "ALL") and ([occupation_group] <> "Electrician")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"decade_is_partial", "n"}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Removed Columns", {"occupation_group", "decade"}, "Attribute", "Value"),
+				    #"Added Custom" = Table.AddColumn(#"Unpivoted Columns", "MetricKey", each [occupation_group] & "_" & [Attribute]),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Custom",{"occupation_group", "Attribute"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns1",{"decade", "MetricKey", "Value"}),
+				    #"Pivoted Column" = Table.Pivot(Table.TransformColumnTypes(#"Reordered Columns", {{"MetricKey", type text}}, "en-US"), List.Distinct(Table.TransformColumnTypes(#"Reordered Columns", {{"MetricKey", type text}}, "en-US")[MetricKey]), "MetricKey", "Value", List.Sum),
+				    #"Renamed Columns" = Table.RenameColumns(#"Pivoted Column",{{"CS-related_very_satisfied_pct", "CS_pct"}, {"CS-related_ci_low_95", "CS_low"}, {"CS-related_ci_high_95", "CS_high"}, {"Finance-related_very_satisfied_pct", "Finance_pct"}, {"Finance-related_ci_low_95", "Finance_low"}, {"Finance-related_ci_high_95", "Finance_high"}}),
+				    #"Added Custom1" = Table.AddColumn(#"Renamed Columns", "CS_band_width", each [CS_high] - [CS_low]),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Finance_band_width", each [Finance_high] - [Finance_low]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom2",{{"CS_band_width", type number}, {"Finance_band_width", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

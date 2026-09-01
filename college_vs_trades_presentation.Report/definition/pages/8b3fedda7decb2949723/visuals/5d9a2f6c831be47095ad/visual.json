@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "5d9a2f6c831be47095ad",
+  "position": {
+    "x": 38.81401617250674,
+    "y": 901.77897574123983,
+    "z": 6000,
+    "height": 160,
+    "width": 1699,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Shown here under \"Accounts for Dropout Risk\" (toggle above to compare). These are cumulative earnings minus debt, assuming flat earnings once each career reaches its ceiling, so catching up financially isn't the end of the story. Whether an 11-year wait is worth it also depends on how satisfying the work stays over time. See Job Satisfaction Trend.",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

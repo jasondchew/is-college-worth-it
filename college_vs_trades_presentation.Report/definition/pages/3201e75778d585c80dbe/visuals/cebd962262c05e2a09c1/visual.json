@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "cebd962262c05e2a09c1",
+  "position": {
+    "x": 43.768996960486319,
+    "y": 13.130699088145896,
+    "z": 1000,
+    "height": 151.73252279635258,
+    "width": 1559.6352583586627,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Is a Four-Year Degree Still Worth It?",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "40pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Comparing Long-Term Financial and Satisfaction Outcomes of College vs. the Electrician Trade",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "28pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

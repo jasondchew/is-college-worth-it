@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f4b8e21c9d3a67f05e12",
+  "position": {
+    "x": 46.576819407008081,
+    "y": 822.85714285714278,
+    "z": 4000,
+    "height": 204.42048517520215,
+    "width": 1821.6711590296495,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Electrician satisfaction has stayed roughly flat for five decades (57% in the 1970s, 53% today), and it's the only path with zero debt. CS and Finance both require real debt to reach satisfaction that's comparable to, or lower than, Electrician's. Finance's satisfaction has also seen a statistically confirmed decline over that same span (see Job Satisfaction Trend).",
+                    "textStyle": {
+                      "fontSize": "24pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
