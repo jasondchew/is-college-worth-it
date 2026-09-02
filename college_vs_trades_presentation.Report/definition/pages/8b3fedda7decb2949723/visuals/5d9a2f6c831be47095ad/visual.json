@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "5d9a2f6c831be47095ad",
   "position": {
-    "x": 38.81401617250674,
-    "y": 901.77897574123983,
+    "x": 38.612225282342287,
+    "y": 903.98033308071945,
     "z": 6000,
-    "height": 160,
-    "width": 1699,
+    "height": 158.99151586846824,
+    "width": 1751.1779819227002,
     "tabOrder": 6000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Shown here under \"Accounts for Dropout Risk\" (toggle above to compare). These are cumulative earnings minus debt, assuming flat earnings once each career reaches its ceiling, so catching up financially isn't the end of the story. Whether an 11-year wait is worth it also depends on how satisfying the work stays over time. See Job Satisfaction Trend.",
+                    "value": "Toggle above to compare scenarios. Both use the same underlying calculation: cumulative earnings minus debt, assuming flat earnings once each career reaches its ceiling, so catching up financially isn't the end of the story. Whether the eventual crossover is worth the wait also depends on how satisfying the work stays over time. See Job Satisfaction Trend.",
                     "textStyle": {
                       "fontSize": "24pt"
                     }

@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 477,
-            "y": 0
+            "y": 25
           },
           "nodeIndex": "programs",
           "nodeLineageTag": "00822167-740c-45ad-af77-b0540cc9e580",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 175,
-            "y": 303
+            "y": 328
           },
           "nodeIndex": "earnings_by_year",
           "nodeLineageTag": "3b7fee72-f4f0-41cb-a4d5-fc4b92bf7bc1",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 0,
-            "y": 0
+            "y": 25
           },
           "nodeIndex": "program_costs",
           "nodeLineageTag": "741e020f-50c4-4b6c-b18b-3ca3b1e83956",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 852,
-            "y": 0
+            "y": 25
           },
           "nodeIndex": "satisfaction_by_decade",
           "nodeLineageTag": "22e2711d-5c53-471d-9704-6fd5f12f05c1",
@@ -63,12 +63,38 @@
         {
           "location": {
             "x": 1136,
-            "y": 163.5
+            "y": 188.5
           },
           "nodeIndex": "Scorecard",
           "nodeLineageTag": "76eab298-1f8c-4483-ab54-45a402670063",
           "size": {
             "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1754,
+            "y": 78.5
+          },
+          "nodeIndex": "satisfaction_bands_wide",
+          "nodeLineageTag": "6439a39f-0670-4a2d-8716-c9f507e70abe",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1470,
+            "y": 102.5
+          },
+          "nodeIndex": "satisfaction_whiskers",
+          "nodeLineageTag": "b2eaad37-a6f9-4b81-8a8e-06b8e1eba0bb",
+          "size": {
+            "height": 248,
             "width": 234
           },
           "zIndex": 0
