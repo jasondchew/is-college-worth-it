@@ -14,14 +14,44 @@ Comparing a four-year bachelor's degree against becoming an electrician, which p
 
 ## Presentation
 
-Built in Power BI (PBIP project format: the report unpacks to text, JSON visual/page definitions plus TMDL table/measure/Power Query definitions, editable directly rather than only through the GUI), six pages:
+Built in Power BI (PBIP project format: the report unpacks to text, JSON visual/page definitions plus TMDL table/measure/Power Query definitions, editable directly rather than only through the GUI), six pages. Full interactive file: [college_vs_trades_presentation.pdf](college_vs_trades_presentation.pdf).
 
-1. **Opening**: the human hook, a summer spent working alongside my father-in-law (an electrician) on his property renovation, and meeting Fernando, a roofing crew lead, which is where this project's actual question came from.
-2. **Financial Trajectory**: cumulative earnings net of debt over time, all four paths, both completion scenarios.
-3. **Job Satisfaction Trend**: 50 years of GSS satisfaction data by decade, with small-multiple confirmed/not-confirmed panels for CS and Finance.
-4. **Reconciling Money & Satisfaction**: the two dimensions brought together, with a focused CS-vs-Electrician chart.
-5. **Closing**: decision framework by what you're optimizing for, and the callback to the opening story.
-6. **Sources & Scope**: full data source attribution and a stated list of what this project deliberately didn't model (a second trade, occupational physical toll).
+### 1. Opening
+
+The human hook: a summer spent working alongside my father-in-law (an electrician) on his property renovation, and meeting Fernando, a roofing crew lead, which is where this project's actual question came from.
+
+![Opening page](screenshots/01_opening.jpg)
+
+### 2. Financial Trajectory
+
+Cumulative earnings net of debt over time, all four paths, shown under both completion scenarios.
+
+![Financial Trajectory, accounts for dropout risk](screenshots/02a_financial_trajectory_dropout_risk.png)
+![Financial Trajectory, assumes everyone finishes](screenshots/02b_financial_trajectory_everyone_finishes.png)
+
+### 3. Job Satisfaction Trend
+
+50 years of GSS satisfaction data by decade, with small-multiple confirmed/not-confirmed panels for CS and Finance.
+
+![Job Satisfaction Trend](screenshots/03_job_satisfaction_trend.png)
+
+### 4. Reconciling Money & Satisfaction
+
+The two dimensions brought together, with a focused CS-vs-Electrician chart.
+
+![Reconciling Money and Satisfaction](screenshots/04_reconciling_money_satisfaction.png)
+
+### 5. Closing
+
+Decision framework by what you're optimizing for, and the callback to the opening story.
+
+![Closing page](screenshots/05_closing.png)
+
+### 6. Sources & Scope
+
+Full data source attribution and a stated list of what this project deliberately didn't model (a second trade, occupational physical toll).
+
+![Sources and Scope](screenshots/06_sources_scope.png)
 
 ## Data Sources
 
