@@ -18,7 +18,7 @@ Built in Power BI (PBIP project format: the report unpacks to text, JSON visual/
 
 ### 1. Opening
 
-The human hook: a summer spent working alongside my father-in-law (an electrician) on his property renovation, and meeting Fernando, a roofing crew lead, which is where this project's actual question came from.
+A summer spent working alongside my father-in-law (an electrician) on his property renovation, and meeting Fernando, a roofing crew lead, which is where this project's actual question came from.
 
 ![Opening page](screenshots/01_opening.jpg)
 
