@@ -5,7 +5,7 @@
     "x": 46.4830955946095,
     "y": 491.94609504295056,
     "z": 1000,
-    "height": 250,
+    "height": 400,
     "width": 1750,
     "tabOrder": 1000
   },
@@ -56,6 +56,24 @@
                 "textRuns": [
                   {
                     "value": "Occupational physical toll (injury/disability rates), a real, commonly-raised argument against the trades that this data doesn't capture. Satisfaction and physical toll are different constructs, and GSS's satisfaction figures may even understate toll: workers forced out by injury exit the surveyed population entirely.",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Job security and layoff risk, compared across all four paths. The financial model assumes continuous employment throughout; it says nothing about how likely someone is to stay employed, and that risk differs by field: CS's documented 2022-2024 layoff waves, Finance's cyclical exposure, Psychology's diffuse career paths, and electrician work's tie to construction-cycle demand.",
                     "textStyle": {
                       "fontSize": "18pt"
                     }

@@ -49,7 +49,7 @@ Decision framework by what you're optimizing for, and the callback to the openin
 
 ### 6. Sources & Scope
 
-Full data source attribution and a stated list of what this project deliberately didn't model (a second trade, occupational physical toll).
+Full data source attribution and a stated list of what this project deliberately didn't model (a second trade, occupational physical toll, job security/layoff risk).
 
 ![Sources and Scope](screenshots/06_sources_scope.png)
 
