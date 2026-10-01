@@ -6,7 +6,7 @@ Comparing a four-year bachelor's degree against becoming an electrician, which p
 
 ## Key Findings
 
-- **Computer Science pays off, but not fast.** Even after pricing in the real risk of not finishing the degree, CS doesn't overtake the electrician trade's cumulative earnings until year 11. Finance takes until year 23. Psychology never does, under this model's assumptions.
+- **Computer Science pays off, but not fast.** Even after pricing in the real risk of not finishing the degree, CS doesn't overtake the electrician trade's cumulative earnings until year 11. Finance takes until year 23, while Psychology doesn't catch up within the model.
 - **Electrician holds a real financial lead for the first decade or more, at zero debt**, and satisfaction in the trade has stayed flat for fifty years: no statistically confirmed change across any of the six decades measured (checked exhaustively, every possible pair of decades overlaps).
 - **Finance is the only field with a statistically confirmed decline in job satisfaction** (74.5% "very satisfied" in the 1970s down to 42.7% in the 2020s, confidence intervals that don't overlap), and it's also the slowest-paying-off degree in the study.
 - **CS's satisfaction also drops on paper** (57.6% to 38.4%), but that drop's confidence intervals overlap across decades, so it can't be confirmed as a real change rather than sampling noise.
